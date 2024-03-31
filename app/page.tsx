@@ -1,3 +1,4 @@
+import BookInfo from "../components/book-info/book-info";
 import { fetchFromGoogleBooks } from "../data/fetchFromGoogleBooks";
 import styles from './page.module.css'
 
@@ -13,7 +14,7 @@ export default async function Home() {
     <main className={styles.main}>
       {
         getRandomSubArray(books, 3).map((book, index) => (
-          <div key={index}>hey</div>
+          <BookInfo key={index} initialLoadBook={book} />
       ))
       }
       <div>
