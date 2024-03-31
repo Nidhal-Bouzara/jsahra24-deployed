@@ -1,6 +1,7 @@
 import BookInfo from "../components/book-info/book-info";
 import CreateBook from "../components/create-book/create-book";
 import { fetchFromGoogleBooks } from "../data/fetchFromGoogleBooks";
+import Navigate from "./navigation";
 import styles from './page.module.css'
 
 // dynamic page
@@ -20,7 +21,7 @@ export default async function Home() {
       ))
       }
       <div>
-        {/* <Navigate /> */}
+        <Navigate />
       </div>
     </main>
   );
