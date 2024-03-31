@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+  import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import './index.css'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,3 +20,17 @@ export default function RootLayout({
     </html>
   );
 }
+
+// ? Session 3
+// Fetching data
+  // ! ^ We're facing a big problem here, we're not really fetching data, we're just statically rendering it on the server side every time.
+// Backend routes
+  //todo: Since we can't (shouldn't) run server-side code on client components, we need to create a backend route, we can do that with nextjs
+
+// ? Session 4
+// Mutating data (Create, Update, Delete)
+// done Creating: POST - Create a new book
+// done Upating: PUT - Update a book
+// done Deleting: DELETE - Delete a book
+
+// Global State
