@@ -15,9 +15,9 @@ type GoogleBook = {
   ]
 }
 
-export const fetchFromGoogleBooks = async (): Promise<> => {
+export const fetchFromGoogleBooks = async () => {
   const data = await (await fetch('https://www.googleapis.com/books/v1/volumes?q=nextjs', { next: { revalidate: 3600, tags: ['book-fetching'] } })).json() as GoogleBook
-  const books: Book[] = data.items.map((book) => ({
+  const books = data.items.map((book) => ({
     title: book.volumeInfo.title ?? 'No Title',
     author: book.volumeInfo.authors.map((author) => author).join(', '),
     review: book.volumeInfo.description,

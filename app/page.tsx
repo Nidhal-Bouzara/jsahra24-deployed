@@ -1,5 +1,4 @@
 import { fetchFromGoogleBooks } from "../data/fetchFromGoogleBooks";
-import Navigate from "./navigation";
 import styles from './page.module.css'
 
 // dynamic page
@@ -13,8 +12,8 @@ export default async function Home() {
   return (
     <main className={styles.main}>
       {
-        getRandomSubArray(books, 3).map((book) => (
-          <div>hey</div>
+        getRandomSubArray(books, 3).map((book, index) => (
+          <div key={index}>hey</div>
       ))
       }
       <div>
