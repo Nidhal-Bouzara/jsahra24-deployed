@@ -14,7 +14,7 @@ export default async function Home() {
   const books = await fetchFromGoogleBooks()
   return (
     <main className={styles.main}>
-      <CreateBook />
+      {/* <CreateBook /> */}
       {
         getRandomSubArray(books, 3).map((book, index) => (
           <BookInfo key={index} initialLoadBook={book} />

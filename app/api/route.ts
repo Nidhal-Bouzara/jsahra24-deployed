@@ -1,5 +1,4 @@
 import { fetchFromGoogleBooks } from "../../data/fetchFromGoogleBooks"
-import prisma from "../../data/prisma"
 
 export const GET = async (req: Request) => {
   // const books = await fetchFromGoogleBooks()
@@ -22,10 +21,12 @@ const generateRandomNumberInRange = (min: number, max: number) => {
 export const POST = async (req: Request) => {
   // extract body
   const body = await req.json() as CREATE_BOOK_BODY
-  const book = await prisma.book.create({
-    data: body
-  })
-  return (Response as any).json(book)
+  // create book
+  // const book = await prisma.book.create({
+  //   data: body
+  // })
+  // return (Response as any).json(book)
+  return (Response as any).json({ msg: 'done' })
 }
 
 interface UPDATE_BOOK_BODY {
@@ -38,11 +39,12 @@ interface UPDATE_BOOK_BODY {
 
 export const PUT = async (req: Request) => {
   const { id, ...book }: UPDATE_BOOK_BODY = await req.json()
-  const updatedBook = await prisma.book.update({
-    where: { id },
-    data: book
-  })
-  return (Response as any).json(updatedBook)
+  // const updatedBook = await prisma.book.update({
+  //   where: { id },
+  //   data: book
+  // })
+  // return (Response as any).json(updatedBook)
+  return (Response as any).json({ msg: 'done' })
 }
 
 interface DELETE_BOOK_BODY {
@@ -51,8 +53,9 @@ interface DELETE_BOOK_BODY {
 
 export const DELETE = async (req: Request) => {
   const { id } = await req.json() as DELETE_BOOK_BODY
-  const deletedBook = await prisma.book.delete({
-    where: { id }
-  })
-  return (Response as any).json(deletedBook)
+  // const deletedBook = await prisma.book.delete({
+  //   where: { id }
+  // })
+  // return (Response as any).json(deletedBook)
+  return (Response as any).json({ msg: 'done' })
 }
